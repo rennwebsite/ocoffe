@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grand Opening Ocoffe</title>
+  <!-- CDN untuk SimplyCountdown CSS -->
+  <link rel="stylesheet" href="./css/simplyCountdown.theme.default.css">
+
+  <!-- CDN untuk SimplyCountdown JS -->
+  <script src="./dist/simplyCountdown.min.js"></script>
+
+  <style>
+    /* General Body Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    /* Styling for Headings */
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 3rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Display Date Information (Year, Day, Date) */
+    .date-info {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Countdown Timer */
+    .simply-countdown {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #ff5733;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 2rem;
+      text-align: center;
+      
+    }
+
+    /* Footer Styling */
+    footer {
+      margin-top: 3rem;
+      font-size: 1rem;
+      color: #fff;
+      opacity: 0.8;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .simply-countdown {
+        font-size: 2.5rem;
+      }
+
+      .date-info {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Grand Opening Ocoffe</h1>
+  <h2>5 Desember 2025</h2>
+
+  <!-- Displaying Year, Day, Date Information -->
+  <div class="date-info">
+    Tahun: 2025 | Hari: Jumat | Tanggal: 5 Desember
+  </div>
+
+  <!-- Countdown Timer -->
+  <div class="simply-countdown" id="ocoffe-countdown"></div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Ocoffe. Semua Hak Dilindungi.
+  </footer>
+
+  <script>
+    // Initialize Countdown
+    simplyCountdown('#ocoffe-countdown', {
+      year: 2025,
+      month: 1,
+      day: 5,
+      hours: 8,
+      minutes: 0,
+      seconds: 0,
+      words: { // Custom labels, with lambda for plurals
+        days: { root: 'day', lambda: (root, n) => n > 1 ? root + 's' : root },
+        hours: { root: 'hour', lambda: (root, n) => n > 1 ? root + 's' : root },
+        minutes: { root: 'minute', lambda: (root, n) => n > 1 ? root + 's' : root },
+        seconds: { root: 'second', lambda: (root, n) => n > 1 ? root + 's' : root }
+      },
+      plural: true,
+      inline: false,
+      enableUtc: false,
+      onEnd: function() {
+        alert('Grand Opening Telah Dimulai! Selamat Datang di Ocoffe!');
+      },
+      refresh: 1000,
+    });
+  </script>
+</body>
+
+</html>
